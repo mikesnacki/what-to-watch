@@ -1,33 +1,234 @@
-.App {
+
+/*----------------------------- ELEMENTAL STYLING -----------------------------*/
+body, html{
+  margin: 0;
+  padding: 0;
+  font-family: 'Nanum Gothic', sans-serif;
+  width: 100%;
+}
+
+a{
+  text-decoration: none;
+  color: #eee;
+  margin: 0 0 ;
+}
+
+a:hover {
+  color: #ff9c91;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  margin-right: 5vw;
+}
+
+svg{
+  margin: 0 auto;
+}
+
+h1{
+  font-size: calc(0.5vw + 18px);
+}
+
+h2{
+  font-size: calc(0.5vw + 17px);
+}
+
+h3{
+  font-size: calc(0.5vw + 16px);
+}
+
+h4{
+  font-size: calc(0.5vw + 15px);
+}
+
+h5{
+  font-size: calc(0.5vw + 14px);
+}
+
+h6{
+  font-size: calc(0.5vw + 13px);
+}
+
+p, a{
+  font-size: calc(0.5vw + 12px);
+}
+
+input, textarea {
+  display: block;
+}
+
+
+/*----------------------------- GENERAL STYLING -----------------------------*/
+
+.flex-row{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.flex-col{
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+  margin: 2.5vw;
+}
+
+.align-center{
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.space-around{
+  justify-content: space-between;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.center-vertically{
+  margin: auto;
 }
 
-.App-link {
-  color: #61dafb;
+.button-clear{
+  border: none;
+  background-color: inherit;
+  font-size: inherit;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+/*----------------------------- HEADER STYLING -----------------------------*/
+
+@keyframes slide-right {
+  from{width: 100%; background-color: #eee; margin-left:0%}
+
+  to{width:0; background-color: transparent;margin-left:100%; overflow: hidden;}
+
+}
+
+.flex-row ul, li {
+  list-style: none;
+  display: inline;
+  align-content: center;
+}
+
+.flex-row h1 {
+  display: inline;
+  font-size: calc(0.5vw + 18px);
+}
+
+.flex-row h1 {
+  color: #eee;
+  padding:0;
+  margin: auto 5vw;
+}
+
+.header{
+  display: inline-flex;
+  position: fixed;
+  background-color: #393e46;
+  font-weight: bold;
+  z-index: 200;
+  height: 56px;
+  width:100%;
+  top:0;
+}
+
+.menu-bar-false{
+   border: transparent;
+   margin: auto 1vw;
+   background-color: transparent;
+}
+
+.menu-bar-true{
+  border: transparent;
+  margin: auto 1vw;
+  background-color: transparent;
+}
+
+.line1, .line2, .line3 {
+  width: 38px;
+  height: 3px;
+  background-color: #eee;
+  margin: 8px 0;
+  border-radius: 20px;
+  transition: 0.3s
+}
+
+.menu-bar-true .line1 {
+  width: 40px;
+  transform: rotate(-45deg) translate(-8px, 9px);
+}
+
+.menu-bar-true .line2 {
+  animation: slide-right 0.5s forwards;
+}
+
+.menu-bar-true .line3 {
+  width: 40px;
+  transform: rotate(45deg) translate(-6px, -8px);
+}
+
+.nav-links{
+  margin: auto 1vw;
+}
+
+.menu-dropdown-false{
+  position: fixed;
+  display: hidden;
+  top:-25vh;
+  transition: all 0.5s ease-out; 
+}
+
+.menu-dropdown-true{
+  position: fixed;
+  transition: all 0.5s ease-in-out; 
+  background-color: #dadddf;
+  z-index: 100;
+  top: 7vh;
+  margin: 0 auto;
+  padding: 6.0vh 0 4vh;
+  display: block;
+  width:100vw;
+  text-align: center;
+}
+
+.menu-dropdown-true a{
+  color:#393e46;
+  display: block;
+}
+
+.menu-dropdown-true a:hover {
+  transition: 0.2s;
+  font-weight: 600;
+  color: #ff9c91;
+}
+
+/*----------------------------- SEARCH STYLING -----------------------------*/
+
+.search{
+  margin-top: 80px;
+  text-align: center;
+}
+
+.search input, button{
+  margin: 1vh auto;
+  text-align: center;
+  border: none;
+  border:solid 2px #ccc;
+  border-radius: 6px;
+  padding: 0.8vh;
+}
+
+.show-details{
+  margin: 2vh auto;
+  background-color: #e0e0e0;
+  min-width: 30%;
+  max-width: 320px;
+  padding: 1vh 1vw;
+  border-radius: 10px;
+}
+
+.show-details p {
+  padding:1vh 5vw;
 }
