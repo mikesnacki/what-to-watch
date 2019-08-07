@@ -60,6 +60,7 @@ export default function Search() {
                 />
                 <button
                     type="button"
+                    className="button-search"
                     onClick={() => fetchData(query.replace(/\s+/g, '-').toLowerCase())}
                 >
                     Search Shows
