@@ -20,7 +20,7 @@ export default function Search() {
     const fetchData = query => {
 
         query.length > 0 &&
-            fetch(`http://api.tvmaze.com/singlesearch/shows?q=${query}`)
+            fetch(`https://api.tvmaze.com/singlesearch/shows?q=${query}`)
                 .then(res => res.json())
                 .then((data) => (
                     setShow({
