@@ -13,17 +13,17 @@ export default function Header() {
   useOnClickOutside(headerRef, () => activateNavDisplay(false))
 
   const links = [
-    <li key={1}><a href="#about">Search</a></li>,
-    <li key={2}><a href="#experience">My Shows</a></li>,
-    <li key={3}><a href="#portfolio">What's Hot</a></li>,
-    <li key={4}><a href="#contact">What's New</a></li>
+    <li key={1}><a href="#search">Search</a></li>,
+    <li key={2}><a href="#my-shows">My Shows</a></li>,
+    <li key={3}><a href="#hot">What's Hot</a></li>,
+    <li key={4}><a href="#new">What's New</a></li>
   ]
 
   return (
 
     <div className="container" ref={headerRef}>
       <header className="flex-row header space-around">
-        <h1>What to Watch</h1>
+        <h1>No More Showhole</h1>
         {width >= collapseWidth
           ? <ul className="nav-links">{links}</ul >
           :

@@ -157,7 +157,7 @@ input, textarea {
 
 .menu-bar-true .line1 {
   width: 40px;
-  transform: rotate(-45deg) translate(-8px, 9px);
+  transform: rotate(-45deg) translate(-8px, 8px);
 }
 
 .menu-bar-true .line2 {
@@ -185,7 +185,7 @@ input, textarea {
   transition: all 0.5s ease-in-out; 
   background-color: #dadddf;
   z-index: 100;
-  top: 7vh;
+  top: 56px;
   margin: 0 auto;
   padding: 6.0vh 0 4vh;
   display: block;

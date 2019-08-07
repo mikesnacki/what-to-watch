@@ -46,9 +46,12 @@ export default function Search() {
 
     return (
 
-        <div className="search">
+        <div
+            className="search"
+            id="search"
+        >
             <div
-            >
+            >{console.log(show.name)}
                 <h2>Enter Show Title to Search</h2>
                 <input type="text"
                     value={query}
