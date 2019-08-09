@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react"
 import { useWindowDimensions } from "../utilhooks/windowDim"
 import useOnClickOutside from "../utilhooks/useOnClickOutside"
 
-export default function Header() {
+export default function Header({ showAuthModal }) {
 
   const { width } = useWindowDimensions();
   const collapseWidth = 1000;
@@ -16,12 +16,14 @@ export default function Header() {
     <li key={1}><a href="#search">Search</a></li>,
     <li key={2}><a href="#my-shows">My Shows</a></li>,
     <li key={3}><a href="#hot">What's Hot</a></li>,
-    <li key={4}><a href="#new">What's New</a></li>
+    <li key={4}><a href="#new">What's New</a></li>,
+    <li key={5}><a href="#new" onClick={showAuthModal}>User</a></li>
   ]
 
   return (
 
-    <div className="container" ref={headerRef}>
+    <div
+      className="container" ref={headerRef}>
       <header className="flex-row header space-around">
         <h1>No More Showhole</h1>
         {width >= collapseWidth
@@ -39,7 +41,6 @@ export default function Header() {
       </header>
       <ul
         onMouseLeave={() => activateNavDisplay(!navDisplay)}
-        onMouseOut={() => activateNavDisplay(!navDisplay)}
         onClick={() => activateNavDisplay(!navDisplay)}
         className={`menu-dropdown-${navDisplay}`}>
         {navDisplay === true && width < collapseWidth && links}

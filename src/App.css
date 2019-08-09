@@ -19,6 +19,7 @@ a:hover {
 
 ul {
   padding: 0;
+  margin:0;
 }
 
 li {
@@ -179,6 +180,7 @@ input, textarea {
   display: hidden;
   top:-25vh;
   transition: all 0.5s ease-out; 
+  background-color: #dadddf;
 }
 
 .menu-dropdown-true{
@@ -261,4 +263,92 @@ input, textarea {
 
 .show-details p {
   padding:1vh 5vw;
+}
+
+
+/*----------------------------- MODAL -----------------------------*/
+
+@keyframes darken {
+  from {};
+  to {background: rgba(0, 0, 0, 0.6)}
+}
+
+@keyframes animatetop {
+  from {top:-400px; opacity: 0}
+  to {top:100; opacity: 1}
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width:100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.modal-main {
+  padding: 1vh 2vw;
+  position:relative;
+  background: white;
+  border: 2px solid #17A398;
+  color: #17A398;
+  width: 320px;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  animation: animatetop;
+  animation-duration: 0.3s;
+}
+
+.display-block {
+  display: block;
+  animation: darken 0.3s;
+}
+
+.display-none {
+  display: none;
+}
+
+.modal-main h2, button{
+  margin: 20px auto;
+}
+
+.button-modal{
+  margin-top: 0.5vh;
+  margin-left: 1.0vw;
+  background-color: #17A398;
+  color: white;
+  font-weight: bold;
+  border: 2px solid #393e46;
+}
+li .button-modal{
+  margin: 0;
+}
+.button-right{
+  margin-top:0.5%;
+  margin-left: 90%;
+  color:#17A398;
+}
+
+.button-modal:hover{
+  background-color: #fff;
+  border:3px solid #17A398;
+  color: #393e46;
+}
+
+.button-modal:active:after{
+  background-color: #17A398;
+}
+
+.modal-link{
+  font-size: 16px;
+  color: #fff;
+}
+
+.modal-input{
+  margin: 1vh auto;
+  border: 3px solid #17A398;
+  padding: 1vh 3vw;
+  width: 280px;
 }

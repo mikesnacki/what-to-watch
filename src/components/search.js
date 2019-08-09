@@ -51,7 +51,7 @@ export default function Search() {
             id="search"
         >
             <div
-            >{console.log(show.name)}
+            >
                 <h2>Enter Show Title to Search</h2>
                 <input type="text"
                     value={query}
