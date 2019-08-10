@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { FaGoogle, FaGithub } from 'react-icons/fa'
 
 function Signup() {
     return (
@@ -31,7 +32,13 @@ function Signin() {
                 placeholder="password"
                 type="current-password"
             />
+
             <button className="button-modal">submit</button>
+            <h3>Or Login with</h3>
+            <div className="flex-row">
+                <FaGoogle />
+                <FaGithub />
+            </div>
         </form>
     )
 }
