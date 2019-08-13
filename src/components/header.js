@@ -2,7 +2,12 @@ import React, { useState, useRef } from "react"
 import { useWindowDimensions } from "../utilhooks/windowDim"
 import useOnClickOutside from "../utilhooks/useOnClickOutside"
 
-export default function Header({ showAuthModal }) {
+export default function Header({ showAuth }) {
+
+
+  const showAuthModal = () => {
+    showAuth(true)
+  }
 
   const { width } = useWindowDimensions();
   const collapseWidth = 1000;

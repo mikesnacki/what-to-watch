@@ -1,21 +1,9 @@
 import React, { useState } from 'react'
 
-export default function Search() {
+export default function Search({ addToShows, setShow, show }) {
 
     const [query, setQuery] = useState('')
-    const [show, setShow] = useState(
-        {
-            name: "",
-            imdb: "",
-            thetvdb: "",
-            image: "",
-            network: "",
-            rating: "",
-            runtime: "",
-            summary: ""
-        }
-    )
-
+    const [clicked, setClicked] = useState(false)
 
     const fetchData = query => {
 
@@ -34,13 +22,13 @@ export default function Search() {
                         summary: data.summary.replace(/<[^>]*>?/g, '')
                     })
                 ))
+                .then(setClicked(true))
                 .catch((err) => {
                     setShow({
                         name: "Show not found!"
                     })
                     console.log(err)
                 })
-
     }
 
 
@@ -73,8 +61,20 @@ export default function Search() {
                         <img src={show.image} alt="" />
                         <h3>Network: {show.network}</h3>
                         <h4>Rating: {show.rating}</h4>
-                        <h4>Run time: {show.runtime}</h4>
+                        <h4>Run time: {show.runtime} minutes</h4>
                         <p>{show.summary}</p>
+                        {clicked === true ?
+                            <button
+                                className='button-search'
+                                onClick={addToShows}>
+                                Add to my shows
+                        </button>
+                            :
+                            <div
+                                className="button-search"
+                            >Show added!</div>
+
+                        }
                     </div>
                 }
             </div>}

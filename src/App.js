@@ -2,31 +2,57 @@ import React, { useState } from 'react';
 import './App.css';
 import Header from "../src/components/header"
 import Search from "../src/components/search"
-import Auth from "../src/components/auth/auth"
-
+import Auth from "../src/components/auth"
+import { db } from "../src/components/firebase"
 
 function App() {
 
-  const [auth, showAuth] = useState(true)
+  const [authenticated, showAuth] = useState(false)
+  const [user, userInfo] = useState({
+    currentShow: "",
+    shows: [],
+    user: null,
+  })
 
-  const hideAuthModal = () => {
-    showAuth(false)
-  }
+  const [show, setShow] = useState(
+    {
+      name: "",
+      imdb: "",
+      thetvdb: "",
+      image: "",
+      network: "",
+      rating: "",
+      runtime: "",
+      summary: ""
+    }
+  )
 
-  const showAuthModal = () => {
-    showAuth(true)
+  const addToShows = () => {
+    user !== null &&
+      db
+        .collection(user.user)
+        .doc(show.name)
+        .set(show)
   }
 
   return (
     <div className="App">
       <Header
-        showAuthModal={showAuthModal} />
-      <Search />
+        showAuth={showAuth}
+      />
+      <Search
+        show={show}
+        setShow={setShow}
+        addToShows={addToShows}
+      />
       <Auth
-        auth={auth}
-        hideAuthModal={hideAuthModal}
+        authenticated={authenticated}
+        user={user.user}
+        showAuth={showAuth}
+        userInfo={userInfo}
       />
     </div>
+
   );
 }
 
